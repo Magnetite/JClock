@@ -29,7 +29,7 @@ if (m >= 20 && m < 30){
 	} else if (m >= 50){
 		w = tensWords[3] + " " + intWords[(m % 10) ];
 	} else if (m < 20 && m > 0){
-		w = intWords[m - 1];
+		w = intWords[m];
 	} else if (mode === 1) {
 		w = "O'Clock";
 	} else {
