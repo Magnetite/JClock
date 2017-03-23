@@ -47,6 +47,7 @@ function sayTime(){
 	
 	var h = parseInt(t[0]);
 	var m = parseInt(t[1]);
+	var s = parseInt(t[2]);
 	
     if (h > 12){
         hour = intWords[h - 12];
@@ -60,7 +61,7 @@ function sayTime(){
     }
 	
 	min = translate(m, 1);
-	sec = translate(t[2], 0);
+	sec = translate(s, 0);
 	
 	
 	document.getElementById("time").innerHTML = "<h1>" + hour + " " + min + " " + ampm + "</h1>";
