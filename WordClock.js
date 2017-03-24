@@ -28,8 +28,10 @@ if (m >= 20 && m < 30){
 		w = tensWords[2] + " " + intWords[(m % 10) ];
 	} else if (m >= 50){
 		w = tensWords[3] + " " + intWords[(m % 10) ];
-	} else if (m < 20 && m > 0){
+	} else if (m < 20 && m > 9){
 		w = intWords[m];
+	} else if (m > 0 && m < 10){
+		w = "O' " + intWords[m];
 	} else if (mode === 1) {
 		w = "O'Clock";
 	} else {
