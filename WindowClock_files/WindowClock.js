@@ -19,10 +19,12 @@ function arrTime(){
 var d = Date();
 
 var ta = d.split(" ")[4].split(":").join("").split(""); // makes an array of single digit strings
+
+// Get rid of the seconds for now
 ta.pop();
 ta.pop();
 
-// Get rid of the seconds for now
+
 var h = ta.shift();
 h += ta.shift();
 
