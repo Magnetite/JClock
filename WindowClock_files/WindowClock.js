@@ -1,5 +1,5 @@
  
-
+var changed = [];  //<= Shows what number changes (patterns) where made, so only effected divs opacity is resetted
 var intPat = [ 
 [0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x16,0x26,0x25,0x24,0x23,0x22,0x21,0x20,0x10],
 [0x20,0x21,0x22,0x23,0x24,0x25,0x26],
@@ -40,9 +40,13 @@ return hour.toString().split("").concat(ta);
 function buildNumeral(m){
 
 
-//todo code below
+//todo complete this code!  
+var subArr = intPat[ parseInt(m) ];  //<= selects numeral pattern to display
 
+subArr.forEach(function(cur){
 
+document.getElementById("d" + cur.toString(16)).style.opacity = "0";
+  });
 	
 	return;
 }
