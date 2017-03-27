@@ -65,7 +65,7 @@ for (var j = 0, len = cleanArr.length; j < len; j++){
 	
 	
 
-	document.getElementById("d" + tm.toString(16) ).style.opacity = "0.9";
+	document.getElementById("d" + tm.toString(16) ).style.opacity = "0.91";
  }
 
 
