@@ -36,8 +36,7 @@ if (hour > 12){
 	hour = 12;
 }
 
-return hour.toString().split("").concat(ta);  //todo add back concat!
-//return ["1","2"];
+return hour.toString().split("").concat(ta); 
 
 
 
@@ -56,11 +55,12 @@ for (var i = 0, len = subArr.length; i < len; i++){
 	
 	
 	tmp = tmpArr[i];
+	tmp += (0x40 * n);  //<= testing...
 	if (tmp.length === 1){
 		tmp = "0" + tmp;
 	}
 	
-	tmp += (0x40 * n);  //<= testing...
+	
 
 	document.getElementById("d" + tmp.toString(16) ).style.opacity = "0";
  }
@@ -78,7 +78,7 @@ function sayTime(){
 	
 	
 	
-	setTimeout(sayTime, 10000);
+	setTimeout(sayTime, 30000);
 }
 
 window.onload = sayTime;  //<= TODO Uncomment to make work!
