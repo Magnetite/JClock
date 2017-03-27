@@ -19,7 +19,10 @@ function arrTime(){
 var d = Date();
 
 var ta = d.split(" ")[4].split(":").join("").split(""); // makes an array of single digit strings
+ta.pop();
+ta.pop();
 
+// Get rid of the seconds for now
 var h = ta.shift();
 h += ta.shift();
 
@@ -31,28 +34,33 @@ if (hour > 12){
 	hour = 12;
 }
 
-return hour.toString().split("").concat(ta);
+return hour.toString().split("").concat(ta);  //todo add back concat!
+//return ["1","2"];
 
 
 
 }
 
-function buildNumeral(m){
+function buildNumeral(m, n){
 
 
 //todo complete this code!  
 var subArr = intPat[ parseInt(m) ];  //<= selects numeral pattern to display
-var tmp = "";
+var tmp = "", tmpArr = subArr;
 
 
 for (var i = 0, len = subArr.length; i < len; i++){
+
 	
-	tmp = subArr[i].toString(16);
+	
+	tmp = tmpArr[i];
 	if (tmp.length === 1){
 		tmp = "0" + tmp;
 	}
+	
+	tmp += (0x40 * n);  //<= testing...
 
-	document.getElementById("d" + tmp ).style.opacity = "0";
+	document.getElementById("d" + tmp.toString(16) ).style.opacity = "0";
  }
 	
 	return;
@@ -62,13 +70,13 @@ function sayTime(){
 
     var t = arrTime();
 	
-	t.forEach( function(cur){ buildNumeral(cur);  });
+	t.forEach( function(cur, ind){ buildNumeral(cur, ind);  });
 	
 	
 	
 	
 	
-	setTimeout(sayTime, 1000);
+	setTimeout(sayTime, 10000);
 }
 
-//window.onload = sayTime;  //<= TODO Uncomment to make work!
+window.onload = sayTime;  //<= TODO Uncomment to make work!
