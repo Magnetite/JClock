@@ -48,7 +48,7 @@ function buildNumeral(m, n){
 //todo complete this code!  
 var subArr = intPat[ parseInt(m) ];  //<= selects numeral pattern to display
 var cleanArr = intPat[8]; //<= selects the number 8 pattern, which is used also for resetting
-var tmp = "", tmpArr = subArr;
+var tmp, tmpArr = subArr;
 var tm = "";
 
 
@@ -78,7 +78,7 @@ for (var i = 0, len = subArr.length; i < len; i++){
 	
 	tmp = tmpArr[i];
 	tmp += (0x40 * n);  //<= testing...
-	if (tmp.length === 1){
+	if (tmp.toString(16).length === 1){
 		tmp = "0" + tmp;
 	}
 	
