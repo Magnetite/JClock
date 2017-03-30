@@ -125,12 +125,13 @@ function sayTime(){
 //makes sure the time on the clock changes when the minutes change on clients host machine
 function minuteSync(){
 	
-	var seconds = parseInt( Date().split(" ")[4].split(":")[2] );  //gets seconds as an int value
+	//var seconds = parseInt( Date().split(" ")[4].split(":")[2] );  //gets seconds as an int value
+	var seconds = new Date().getTime() % 60000;
 	
 	if (seconds === 0){
 		setTimeout(sayTime, 60000);
 	} else {
-		setTimeout(minuteSync, 60000 - (seconds * 1000) );
+		setTimeout(minuteSync, 60000 - (seconds) );
 		sayTime();
 	}
 
