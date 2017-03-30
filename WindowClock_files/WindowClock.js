@@ -42,17 +42,12 @@ return hour.toString().split("").concat(ta);
 
 }
 
-function buildNumeral(m, n){
-
-
-//todo complete this code!  
-var subArr = intPat[ parseInt(m) ];  //<= selects numeral pattern to display
-var cleanArr = intPat[8]; //<= selects the number 8 pattern, which is used also for resetting
-var tmp, tmpArr = subArr;
-var tm = "";
-
-
-//Digit cleaner below
+//Resets the digits back to the default opacity
+function digitCleaner(n){
+	var cleanArr = intPat[8]; //<= selects the number 8 pattern, which is used also for resetting
+	var tm = "";
+	
+	//Digit cleaner below
 for (var j = 0, len = cleanArr.length; j < len; j++){
 
 	
@@ -67,6 +62,22 @@ for (var j = 0, len = cleanArr.length; j < len; j++){
 
 	document.getElementById("d" + tm.toString(16) ).style.opacity = "0.9";
  }
+	
+	
+}
+
+function buildNumeral(m, n){
+
+
+
+//todo complete this code!  
+var subArr = intPat[ parseInt(m) ];  //<= selects numeral pattern to display
+
+var tmp, tmpArr = subArr;
+
+
+
+digitCleaner(n); 
 
 
 
@@ -99,6 +110,7 @@ function sayTime(){
 	
 		if (t.length === 3){
 			ind++;
+			digitCleaner(0);  //todo Replace this line?
 		}
 	buildNumeral(cur, ind);  
 	});
