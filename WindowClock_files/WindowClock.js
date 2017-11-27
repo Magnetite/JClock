@@ -14,6 +14,7 @@ intPat = [
 ];  //<= todo fill array with arrays of hexadecimal values that correspond to div ids 
 
 
+
 function arrTime(){
 
 var d = Date();
@@ -137,4 +138,6 @@ function minuteSync(){
 
 }
 
-window.onload = minuteSync;  //<= TODO Uncomment to make work!
+
+
+window.onload = minuteSync;  
