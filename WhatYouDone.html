@@ -9,10 +9,23 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
+
+
 </head>
 <body>
 
-<div id="clock">{{time}}</div>
+<div ng-app="wyd" ng-controller="wCon">
+	<div id="clock">{{time}}</div>
+</div>
+
+
+<script>
+
+	var wydApp = angular.module("wyd", []);
+	
+	
+	var time = new Date();
+</script>
 
 </body>
 </html>
