@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<title>WhatYouDone! Timer</title>
+<title>WhatYouDid! Timer</title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
@@ -22,9 +22,11 @@
 <script>
 
 	var wydApp = angular.module("wyd", []);
+	wyd.controller("wCon",function($scope){
+		$scope.time = Date();
+	});
 	
 	
-	var time = new Date();
 </script>
 
 </body>
