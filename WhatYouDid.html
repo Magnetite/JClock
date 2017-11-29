@@ -23,9 +23,21 @@
 
 	var wydApp = angular.module("wyd", []);
 	wydApp.controller("wCon",function($scope){
-		$scope.time = Date().split(" ")[4].split(":").slice(0,2).join(":");
+		
+		
+		
+		
+		$scope.time = timer();
+		
 	});
 	
+let timer = () => { 
+	return Date().split(" ")[4].split(":").slice(0,2).join(":");
+}
+
+let start = () => setTimeout(timer, 1000);
+window.load = start;
+
 	
 </script>
 
