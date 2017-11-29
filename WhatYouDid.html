@@ -23,7 +23,7 @@
 
 	var wydApp = angular.module("wyd", []);
 	wydApp.controller("wCon",function($scope){
-		$scope.time = Date().split(" ")[4];
+		$scope.time = Date().split(" ")[4].split(":").slice(0,2).join(":");
 	});
 	
 	
