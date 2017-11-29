@@ -15,15 +15,15 @@
 <body>
 
 <div ng-app="wyd" ng-controller="wCon">
-	<div id="clock">{{time}}</div>
+	<div id="clock"><h1>{{time}}</h1></div>
 </div>
 
 
 <script>
 
 	var wydApp = angular.module("wyd", []);
-	wyd.controller("wCon",function($scope){
-		$scope.time = Date();
+	wydApp.controller("wCon",function($scope){
+		$scope.time = Date().split(" ")[4];
 	});
 	
 	
