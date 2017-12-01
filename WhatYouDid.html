@@ -22,20 +22,21 @@
 
 <script>
 
-	var t;
 	
 	var wydApp = angular.module("wyd", []);
-	wydApp.controller("wCon",function($scope){
+	wydApp.controller("wCon",function($scope, $interval){
 		
 		
 		
 
-		$scope.timer = function(){ 
+		timer = function(){ 
 			$scope.time = Date().split(" ")[4].split(":").slice(0,2).join(":");
 			
-			setTimeout($scope.timer, 10000);
+			
 		}
 		
+		timer();
+		$interval(timer, 10000);
 		
 	});
 	
