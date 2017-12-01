@@ -16,27 +16,35 @@
 
 <div ng-app="wyd" ng-controller="wCon">
 	<div id="clock"><h1>{{time}}</h1></div>
+	<textarea></textarea>
 </div>
 
 
 <script>
 
+	var t;
+	
 	var wydApp = angular.module("wyd", []);
 	wydApp.controller("wCon",function($scope){
 		
 		
 		
+
+		$scope.timer = function(){ 
+			$scope.time = Date().split(" ")[4].split(":").slice(0,2).join(":");
+			
+			setTimeout($scope.timer, 10000);
+		}
 		
-		$scope.time = timer();
 		
 	});
 	
-let timer = () => { 
-	return Date().split(" ")[4].split(":").slice(0,2).join(":");
-}
+	
+		
 
-let start = () => setTimeout(timer, 1000);
-window.load = start;
+		//window.load = timer;
+	
+
 
 	
 </script>
