@@ -20,13 +20,31 @@
 	<div id="clock"><h1>{{time}}</h1></div>
 	
 	<div class="form-group">
-		<textarea class="form-control"></textarea>
-		<button class="btn form--control">Add</button>
+		<textarea class="form-control" id="text"></textarea>
+		<button class="btn form--control" id="add">Add</button>
 	</div>
+	
+	<ul id="list">
+	</ul>
+	
 </div>
 
 
 <script>
+
+
+	$("document").ready(function(){
+		$("#add").click(function(){
+		
+			let txt = $("#text").val();
+		
+			//if there is text in textarea, append text to list & clear textarea
+			if ( txt.length > 1 ){
+				$("#list").append("<li>" + txt + "</li>");
+				$("#text").val(" ");
+			}
+		});
+	});
 
 	
 	var wydApp = angular.module("wyd", []);
