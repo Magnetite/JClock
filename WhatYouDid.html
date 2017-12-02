@@ -33,18 +33,7 @@
 <script>
 
 
-	$("document").ready(function(){
-		$("#add").click(function(){
-		
-			let txt = $("#text").val();
-		
-			//if there is text in textarea, append text to list & clear textarea
-			if ( txt.length > 1 ){
-				$("#list").append("<li>" + txt + "</li>");
-				$("#text").val(" ");
-			}
-		});
-	});
+	
 
 	
 	var wydApp = angular.module("wyd", []);
@@ -61,6 +50,19 @@
 		
 		timer();
 		$interval(timer, 10000);
+		
+		$("document").ready(function(){
+			$("#add").click(function(){
+		
+				let txt = $("#text").val();
+		
+				//if there is text in textarea, append text to list & clear textarea
+				if ( txt.length > 1 ){
+					$("#list").append("<li>" + $scope.time + ") " + txt + "</li>");
+					$("#text").val(" ");
+				}
+			});
+		});
 		
 	});
 	
