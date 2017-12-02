@@ -8,6 +8,8 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 
 
 
@@ -16,7 +18,11 @@
 
 <div ng-app="wyd" ng-controller="wCon">
 	<div id="clock"><h1>{{time}}</h1></div>
-	<textarea></textarea>
+	
+	<div class="form-group">
+		<textarea class="form-control"></textarea>
+		<button class="btn form--control">Add</button>
+	</div>
 </div>
 
 
@@ -43,7 +49,7 @@
 	
 		
 
-		//window.load = timer;
+		
 	
 
 
