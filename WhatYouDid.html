@@ -24,8 +24,8 @@
 		<button class="btn form--control" id="add">Add</button>
 	</div>
 	
-	<ul id="list">
-	</ul>
+	<div id="list">
+	</div>
 	
 </div>
 
@@ -58,7 +58,7 @@
 		
 				//if there is text in textarea, append text to list & clear textarea
 				if ( txt.length > 1 ){
-					$("#list").append("<li>" + $scope.time + ") " + txt + "</li>");
+					$("#list").append("<div class='panel panel-default'>" + $scope.time + ") " + txt + "</div>");
 					$("#text").val(" ");
 				}
 			});
