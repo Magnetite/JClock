@@ -22,6 +22,7 @@
 	<div class="form-group">
 		<textarea class="form-control" id="text"></textarea>
 		<button class="btn form--control" id="add">Add</button>
+		<button class="btn form--control" id="save">Save</button>
 	</div>
 	
 	<div id="list">
@@ -67,7 +68,9 @@
 	});
 	
 	
-		
+		function store(date, data){
+			localStorage(date, data);
+		}
 
 		
 	
