@@ -25,7 +25,10 @@
 		<button class="btn form--control" id="save">Save</button>
 	</div>
 	
-	<div id="list">
+	<div class="panel panel-default">
+	<h2>{{day}}</h2>
+		<div id="list">
+		</div>
 	</div>
 	
 </div>
@@ -45,6 +48,8 @@
 
 		timer = function(){ 
 			$scope.time = Date().split(" ")[4].split(":").slice(0,2).join(":");
+			let dt = new Date();
+			$scope.day = (dt.getMonth() + 1) + "-" + dt.getDate() + "-" + dt.getFullYear();
 			
 			
 		}
