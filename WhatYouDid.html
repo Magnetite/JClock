@@ -23,6 +23,8 @@
 		<textarea class="form-control" id="text"></textarea>
 		<button class="btn form--control" id="add">Add</button>
 		<button class="btn form--control" id="save">Save</button>
+		<button class="btn form--control" id="clear">Clear</button>
+		<button class="btn form--control" id="upDown">Up / Down</button>
 	</div>
 	
 	<div class="panel panel-default">
@@ -67,6 +69,10 @@
 					$("#list").append("<div class='panel panel-default'>" + $scope.time + ") " + txt + "</div>");
 					$("#text").val(" ");
 				}
+			});
+			
+			$("#clear").click(function(){
+				$("#list").empty();
 			});
 		});
 		
