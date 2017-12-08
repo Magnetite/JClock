@@ -45,7 +45,7 @@
 	var wydApp = angular.module("wyd", []);
 	wydApp.controller("wCon",function($scope, $interval){
 		
-		
+		let updn = 1;
 		
 
 		timer = function(){ 
@@ -66,13 +66,22 @@
 		
 				//if there is text in textarea, append text to list & clear textarea
 				if ( txt.length > 1 ){
-					$("#list").append("<div class='panel panel-default'>" + $scope.time + ") " + txt + "</div>");
+				
+					if ( updn === 1){
+						$("#list").append("<div class='panel panel-default'>" + $scope.time + ") " + txt + "</div>");
+					} else {
+						$("#list").prepend("<div class='panel panel-default'>" + $scope.time + ") " + txt + "</div>");
+					}
 					$("#text").val(" ");
 				}
 			});
 			
 			$("#clear").click(function(){
 				$("#list").empty();
+			});
+			
+			$("#upDown").click(function(){
+				updn *= -1;   //Toggle updn between 1 and -1 to alternate sort order
 			});
 		});
 		
