@@ -46,6 +46,7 @@
 	wydApp.controller("wCon",function($scope, $interval){
 		
 		let updn = 1;
+		let items = {};
 		
 
 		timer = function(){ 
@@ -63,9 +64,12 @@
 			$("#add").click(function(){
 		
 				let txt = $("#text").val();
+				
 		
 				//if there is text in textarea, append text to list & clear textarea
 				if ( txt.length > 1 ){
+				
+					items[$scope.time] = txt;  // store things did in items object
 				
 					if ( updn === 1){
 						$("#list").append("<div class='panel panel-default'>" + $scope.time + ") " + txt + "</div>");
