@@ -29,7 +29,8 @@
 	
 	<div class="panel panel-default">
 	<h2>{{day}}</h2>
-		<div id="list">
+		<div ng-repeat="x in items" id="list">
+		{{x}}
 		</div>
 	</div>
 	
@@ -46,7 +47,7 @@
 	wydApp.controller("wCon",function($scope, $interval){
 		
 		let updn = 1;
-		let items = {};
+		$scope.items = [];
 		
 
 		timer = function(){ 
@@ -69,13 +70,14 @@
 				//if there is text in textarea, append text to list & clear textarea
 				if ( txt.length > 1 ){
 				
-					items[$scope.time] = txt;  // store things did in items object
-				
+					$scope.items.push( $scope.time + ") " + txt);  // store things did in items array
+					/*
 					if ( updn === 1){
 						$("#list").append("<div class='panel panel-default'>" + $scope.time + ") " + txt + "</div>");
 					} else {
 						$("#list").prepend("<div class='panel panel-default'>" + $scope.time + ") " + txt + "</div>");
 					}
+					*/
 					$("#text").val(" ");
 				}
 			});
