@@ -29,8 +29,9 @@
 	
 	<div class="panel panel-default">
 	<h2>{{day}}</h2>
-		<div ng-repeat="x in items" id="list">
-		{{x}}
+	
+		<div id="output">
+			<div ng-repeat="x in items" >{{x}}</div>
 		</div>
 	</div>
 	
@@ -61,7 +62,7 @@
 		timer();
 		$interval(timer, 10000);
 		
-		$("document").ready(function(){
+		//$("document").ready(function(){
 			$("#add").click(function(){
 		
 				let txt = $("#text").val();
@@ -83,13 +84,14 @@
 			});
 			
 			$("#clear").click(function(){
-				$("#list").empty();
+				$("#output").empty();
+				$scope.items = [];
 			});
 			
 			$("#upDown").click(function(){
 				updn *= -1;   //Toggle updn between 1 and -1 to alternate sort order
 			});
-		});
+		//});
 		
 	});
 	
