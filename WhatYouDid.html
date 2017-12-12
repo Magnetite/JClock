@@ -60,7 +60,7 @@
 		}
 		
 		timer();
-		$interval(timer, 10000);
+		$interval(timer, 1000);
 		
 		//$("document").ready(function(){
 			$("#add").click(function(){
@@ -89,7 +89,8 @@
 			});
 			
 			$("#upDown").click(function(){
-				updn *= -1;   //Toggle updn between 1 and -1 to alternate sort order
+				
+				$scope.items.reverse();
 			});
 		//});
 		
