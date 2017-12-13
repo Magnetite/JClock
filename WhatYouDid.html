@@ -71,14 +71,14 @@
 				//if there is text in textarea, append text to list & clear textarea
 				if ( txt.length > 1 ){
 				
-					$scope.items.push( $scope.time + ") " + txt);  // store things did in items array
-					/*
+				
+					
 					if ( updn === 1){
-						$("#list").append("<div class='panel panel-default'>" + $scope.time + ") " + txt + "</div>");
+						$scope.items.push( $scope.time + ") " + txt);  // store things did in items array
 					} else {
-						$("#list").prepend("<div class='panel panel-default'>" + $scope.time + ") " + txt + "</div>");
+						$scope.items.unshift( $scope.time + ") " + txt);  // store things did in items array
 					}
-					*/
+					
 					$("#text").val(" ");
 				}
 			});
@@ -89,6 +89,8 @@
 			});
 			
 			$("#upDown").click(function(){
+			
+				updn *= -1;  //Toggle value of updn to toggle direction of array appending for items array.
 				
 				$scope.items.reverse();
 			});
