@@ -51,7 +51,7 @@
 		$scope.items = [];
 		
 
-		timer = function(){ 
+		timer = () => { 
 			$scope.time = Date().split(" ")[4].split(":").slice(0,2).join(":");
 			let dt = new Date();
 			$scope.day = (dt.getMonth() + 1) + "-" + dt.getDate() + "-" + dt.getFullYear();
@@ -62,8 +62,8 @@
 		timer();
 		$interval(timer, 1000);
 		
-		//$("document").ready(function(){
-			$("#add").click(function(){
+		
+			$("#add").click( () => {
 		
 				let txt = $("#text").val();
 				
@@ -76,27 +76,27 @@
 					if ( updn === 1){
 						$scope.items.push( $scope.time + ") " + txt);  // store things did in items array
 					} else {
-						$scope.items.unshift( $scope.time + ") " + txt);  // store things did in items array
+						$scope.items.unshift( $scope.time + ") " + txt);  
 					}
 					
 					$("#text").val(" ");
 				}
 			});
 			
-			$("#clear").click(function(){
+			$("#clear").click( () => {
 				$("#output").empty();
 				$scope.items = [];
 			});
 			
-			$("#upDown").click(function(){
+			$("#upDown").click( () => {
 			
 				updn *= -1;  //Toggle value of updn to toggle direction of array appending for items array.
 				
 				$scope.items.reverse();
 			});
-		//});
 		
-		$("#save").click(function(){
+		
+		$("#save").click( () => {
 			store($scope.day, $scope.items);
 		});
 		
