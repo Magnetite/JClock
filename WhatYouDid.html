@@ -25,6 +25,7 @@
 		<button class="btn form--control" id="save">Save</button>
 		<button class="btn form--control" id="clear">Clear</button>
 		<button class="btn form--control" id="upDown">Up / Down</button>
+		<button class="btn form--control" id="Remove">Remove Last</button>
 	</div>
 	
 	<div class="panel panel-default">
@@ -98,6 +99,16 @@
 		
 		$("#save").click( () => {
 			store($scope.day, $scope.items);
+		});
+		
+		$("#Remove").click( () => {
+		
+				if ( updn === 1){
+					$scope.items.pop(); 
+				} else {
+					$scope.items.shift();  
+				}
+			
 		});
 		
 	});
