@@ -103,11 +103,17 @@
 		
 		$("#Remove").click( () => {
 		
+			let conf = confirm("Are you sure?");
+			
+			if (conf){
+		
 				if ( updn === 1){
 					$scope.items.pop(); 
 				} else {
 					$scope.items.shift();  
 				}
+				
+			}	
 			
 		});
 		
