@@ -122,6 +122,9 @@
 			let rDate = prompt("Please enter a date to recall a list:", "");
 			
 			if (rDate){
+				
+				localStorage.getItem(rDate);
+				
 			
 			} else {
 				return;
@@ -132,7 +135,7 @@
 	
 	
 		function store(date, data){
-			localStorage(date, data);
+			localStorage.setItem(date, data);
 		}
 
 		
