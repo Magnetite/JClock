@@ -76,9 +76,9 @@
 				
 					
 					if ( updn === 1){
-						$scope.items.push( $scope.time + ") " + txt);  // store things did in items array
+						$scope.items.push( `${$scope.time} ) ${txt}` );  // store things did in items array
 					} else {
-						$scope.items.unshift( $scope.time + ") " + txt);  
+						$scope.items.unshift( `${$scope.time} ) ${txt}` );  
 					}
 					
 					$("#text").val(" ");
