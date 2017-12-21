@@ -51,12 +51,13 @@
 		
 		let updn = 1;
 		$scope.items = [];
+		let weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 		
 
 		timer = () => { 
 			$scope.time = Date().split(" ")[4].split(":").slice(0,2).join(":");
 			let dt = new Date();
-			$scope.day = (dt.getMonth() + 1) + "-" + dt.getDate() + "-" + dt.getFullYear();
+			$scope.day = `${ weekDays[ dt.getDay() ] },  ${dt.getMonth() + 1}-${dt.getDate()}-${dt.getFullYear()} `;
 			
 			
 		}
