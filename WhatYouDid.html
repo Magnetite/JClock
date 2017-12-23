@@ -30,7 +30,7 @@
 	</div>
 	
 	<div class="panel panel-default">
-	<h2>{{day}}</h2>
+	<h2>{{day}} {{nthDay}}</h2>
 	
 		<div id="output">
 			<div ng-repeat="x in items" >{{x}}</div>
@@ -52,13 +52,16 @@
 		let updn = 1;
 		$scope.items = [];
 		let weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-		let months = [31,28,31,30,31,30,31,31,30,31,30,31,31];
+		let months = [31,59,90, 120,151,181, 212,243,273, 304,334,365];
 		
 
 		timer = () => { 
 			$scope.time = Date().split(" ")[4].split(":").slice(0,2).join(":");
 			let dt = new Date();
 			$scope.day = `${ weekDays[ dt.getDay() ] },  ${dt.getMonth() + 1}-${dt.getDate()}-${dt.getFullYear()} `;
+			
+			$scope.nthDay = ` (Day ${ months[ dt.getMonth() - 1] + dt.getDate() } of the year)`;
+			
 			
 			
 		}
