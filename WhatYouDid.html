@@ -67,6 +67,12 @@
 				hr = dt.getHours() - 12;
 				 
 				ampm = "pm";
+			} else if ( time2412 === 1 && dt.getHours() === 0){
+			
+				hr = "12";
+				
+				ampm = "am"
+			
 			} else {
 				hr = dt.getHours();
 				
@@ -79,9 +85,6 @@
 				} else {
 					ampm = "";
 				}
-				
-				
-				
 				
 				
 			}
