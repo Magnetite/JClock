@@ -52,6 +52,7 @@
 		
 		let updn = 1;
 		let time2412 = 1;  //default mode for time display, 1 > am/pm, -1 > 24 hours
+		let ampm = "";
 		$scope.items = [];
 		let weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 		let months = [31,59,90, 120,151,181, 212,243,273, 304,334];
@@ -64,11 +65,28 @@
 			
 			if (time2412 === 1 && dt.getHours() > 12){
 				hr = dt.getHours() - 12;
+				 
+				ampm = "pm";
 			} else {
 				hr = dt.getHours();
+				
+				if (time2412 === 1){
+					ampm = "am";
+					
+					if (hr === 12){
+						ampm = "pm";
+					}
+				} else {
+					ampm = "";
+				}
+				
+				
+				
+				
+				
 			}
 			
-			$scope.time = hr + ":" + dt.getMinutes();
+			$scope.time = hr + ":" + dt.getMinutes() + " " + ampm;
 			
 			$scope.day = `${ weekDays[ dt.getDay() ] },  ${dt.getMonth() + 1}-${dt.getDate()}-${dt.getFullYear()} `;
 			
