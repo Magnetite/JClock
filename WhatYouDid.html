@@ -27,6 +27,7 @@
 		<button class="btn form--control" id="upDown">Up / Down</button>
 		<button class="btn form--control" id="Remove">Remove Last</button>
 		<button class="btn form--control" id="Recall">Recall Date</button>
+		<button class="btn form--control" id="2412">24 / 12 hr</button>
 	</div>
 	
 	<div class="panel panel-default">
@@ -50,14 +51,25 @@
 	wydApp.controller("wCon",function($scope, $interval){
 		
 		let updn = 1;
+		let time2412 = 1;  //default mode for time display, 1 > am/pm, -1 > 24 hours
 		$scope.items = [];
 		let weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-		let months = [31,59,90, 120,151,181, 212,243,273, 304,334,365];
+		let months = [31,59,90, 120,151,181, 212,243,273, 304,334];
 		
 
 		timer = () => { 
-			$scope.time = Date().split(" ")[4].split(":").slice(0,2).join(":");
+			
 			let dt = new Date();
+			let hr;
+			
+			if (time2412 === 1 && dt.getHours() > 12){
+				hr = dt.getHours() - 12;
+			} else {
+				hr = dt.getHours();
+			}
+			
+			$scope.time = hr + ":" + dt.getMinutes();
+			
 			$scope.day = `${ weekDays[ dt.getDay() ] },  ${dt.getMonth() + 1}-${dt.getDate()}-${dt.getFullYear()} `;
 			
 			$scope.nthDay = ` (Day ${ months[ dt.getMonth() - 1] + dt.getDate() } of the year)`;
@@ -135,6 +147,11 @@
 				return;
 			}
 		});
+		
+		$("#2412").click( () => {
+			time2412 *= -1;
+		});
+		
 		
 	});
 	
