@@ -61,7 +61,7 @@
 		timer = () => { 
 			
 			let dt = new Date();
-			let hr;
+			let hr, min;
 			
 			if (time2412 === 1 && dt.getHours() > 12){
 				hr = dt.getHours() - 12;
@@ -89,7 +89,13 @@
 				
 			}
 			
-			$scope.time = hr + ":" + dt.getMinutes() + " " + ampm;
+			if (dt.getMinutes() < 10){
+				min = "0" + dt.getMinutes();
+			} else {
+				min = dt.getMinutes();
+			}
+			
+			$scope.time = hr + ":" + min + " " + ampm;
 			
 			$scope.day = `${ weekDays[ dt.getDay() ] },  ${dt.getMonth() + 1}-${dt.getDate()}-${dt.getFullYear()} `;
 			
